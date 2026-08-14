@@ -147,4 +147,13 @@ scripts/capture-serper.mjs    capture a live SERP into data/fixtures/
 
 ## Scope notes
 
-Built within a time-boxed budget. Deliberately deferred (next iteration): SERP feature parsing (PAA, featured snippets, AI Overview), multi-keyword analysis beyond the pipeline seam, and a one-command fixture re-capture + sample regeneration workflow.
+Built within a time-boxed budget under three priorities: (1) the spec's explicit exclusions stay out; (2) depth on the single-keyword experience beats breadth; (3) the demo must run with zero API keys. Everything below is deliberately deferred, not missing.
+
+| Deferred item | How it was planned | Why deferred |
+|---|---|---|
+| **SERP feature parsing** (PAA, featured snippets, AI Overview, knowledge panel) | Serper already returns these fields (`peopleAlsoAsk`, `answerBox`…) — extend the snapshot schema, feed them into the LLM prompt, add a "SERP features" section to the analysis | Explicitly out of spec; the core promise is the top-N organic evidence chain. Highest-value next iteration |
+| **Multi-keyword / batch analysis + intent clustering** | Pipeline is already parameterized (keyword → SERPSource → analysis); batch = loop + cluster + export briefs | Explicitly out of spec; a deep single-keyword briefing is the assumed unit of value |
+| **One-command freshness workflow** (re-capture fixture + regenerate sample) | `capture-serper.mjs` exists; add a sibling script that re-runs the pipeline and writes `data/samples/` | Demo data is already captured; tooling polish, not core experience |
+| **Automated tests** | Vitest: schema validation + source normalization; smoke tests for both API routes | Time-box: critical paths were verified manually (curled API paths, CDP-driven UI checks) |
+| **Client-side analysis cache** (instant re-runs) | Client Map keyed by keyword + mode | The 8–13 s wait *is* the real LLM call — caching would make the demo feel instant but obscure what is happening |
+| **Live-region switching** | Already parameterized (`gl`/`hl`); swap constants for config | Out of scope (US/EN only per spec) |
