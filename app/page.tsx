@@ -34,6 +34,7 @@ export default function Home() {
 
   const [warnings, setWarnings] = useState<string[]>([]);
   const [error, setError] = useState<string | null>(null);
+  const [inputError, setInputError] = useState<string | null>(null);
   const [highlight, setHighlight] = useState<number[] | null>(null);
 
   /** Step 1: fetch/load SERP data. Fast — renders observed facts immediately. */
@@ -96,7 +97,11 @@ export default function Home() {
   /** Full pipeline: SERP first, then analysis. */
   async function run(kw: string) {
     const trimmed = kw.trim();
-    if (!trimmed) return;
+    if (!trimmed) {
+      setInputError("Please enter a keyword first.");
+      return;
+    }
+    setInputError(null);
     setAnalysis(null);
     setStrategy(null);
     setLlm(null);
@@ -134,10 +139,17 @@ export default function Home() {
         >
           <input
             value={keyword}
-            onChange={(e) => setKeyword(e.target.value)}
+            onChange={(e) => {
+              setKeyword(e.target.value);
+              if (inputError) setInputError(null);
+            }}
             placeholder="Enter a keyword…"
             maxLength={120}
-            className="flex-1 rounded-lg border border-slate-300 bg-white px-4 py-3 text-sm shadow-sm outline-none focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200"
+            className={`flex-1 rounded-lg border bg-white px-4 py-3 text-sm shadow-sm outline-none focus:ring-2 ${
+              inputError
+                ? "border-red-400 focus:border-red-500 focus:ring-red-200"
+                : "border-slate-300 focus:border-indigo-500 focus:ring-indigo-200"
+            }`}
           />
           <button
             type="submit"
@@ -148,6 +160,10 @@ export default function Home() {
             {busy ? "Analyzing…" : "Analyze SERP"}
           </button>
         </form>
+
+        {inputError && (
+          <p className="mt-1.5 text-xs font-medium text-red-600">{inputError}</p>
+        )}
 
         {/* Hard error: SERP stage failed */}
         {serpState === "error" && (
