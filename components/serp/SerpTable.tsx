@@ -17,7 +17,7 @@ export function SerpTable({
         title={
           results.length === 10
             ? "Top 10 organic results"
-            : `Top ${results.length} organic results`
+            : `${results.length} organic results in the top 10`
         }
         subtitle={
           results.length < 10
