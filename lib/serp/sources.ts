@@ -168,6 +168,7 @@ export async function getSerp(
 // SERP twice per run. Fixtures are static; live results are cached briefly.
 const serpCache = new Map<string, { serp: SerpSnapshot; at: number }>();
 const SERP_CACHE_TTL_MS = 5 * 60_000;
+const SERP_CACHE_MAX = 100;
 
 /** getSerp with a 5-minute in-process cache, keyed by mode + keyword. */
 export async function getSerpCached(
@@ -181,5 +182,10 @@ export async function getSerpCached(
   }
   const result = await getSerp(keyword, mode);
   serpCache.set(key, { serp: result.serp, at: Date.now() });
+  // Bound the cache (Map iterates in insertion order → evict the oldest entry).
+  if (serpCache.size > SERP_CACHE_MAX) {
+    const oldest = serpCache.keys().next().value;
+    if (oldest !== undefined) serpCache.delete(oldest);
+  }
   return result;
 }

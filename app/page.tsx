@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
 import type {
   SerpSnapshot,
   SerpAnalysis,
@@ -37,8 +37,12 @@ export default function Home() {
   const [inputError, setInputError] = useState<string | null>(null);
   const [highlight, setHighlight] = useState<number[] | null>(null);
 
+  // Guards against stale responses: every run()/retry bumps the counter, and only
+  // the latest request may write state (Enter-to-submit can fire while busy).
+  const requestId = useRef(0);
+
   /** Step 1: fetch/load SERP data. Fast — renders observed facts immediately. */
-  async function fetchSerp(kw: string): Promise<boolean> {
+  async function fetchSerp(kw: string, id: number): Promise<boolean> {
     setSerpState("loading");
     setError(null);
     setWarnings([]);
@@ -49,6 +53,7 @@ export default function Home() {
         body: JSON.stringify({ keyword: kw }),
       });
       const body = await res.json();
+      if (id !== requestId.current) return false; // stale — a newer run started
       if (!res.ok) {
         setSerpState("error");
         setError(body.error ?? `SERP request failed (${res.status})`);
@@ -59,6 +64,7 @@ export default function Home() {
       setSerpState("done");
       return true;
     } catch {
+      if (id !== requestId.current) return false;
       setSerpState("error");
       setError("Network error — is the server running?");
       return false;
@@ -66,7 +72,7 @@ export default function Home() {
   }
 
   /** Step 2: LLM analysis + strategy. Slow — the right column fills in when ready. */
-  async function fetchAnalysis(kw: string) {
+  async function fetchAnalysis(kw: string, id: number) {
     setAnalysisState("loading");
     setError(null);
     try {
@@ -76,6 +82,7 @@ export default function Home() {
         body: JSON.stringify({ keyword: kw }),
       });
       const body = await res.json();
+      if (id !== requestId.current) return; // stale
       if (!res.ok) {
         setAnalysisState("error");
         setError(body.error ?? `Analysis failed (${res.status})`);
@@ -89,6 +96,7 @@ export default function Home() {
       }
       setAnalysisState("done");
     } catch {
+      if (id !== requestId.current) return; // stale
       setAnalysisState("error");
       setError("Network error — analysis failed.");
     }
@@ -101,14 +109,22 @@ export default function Home() {
       setInputError("Please enter a keyword first.");
       return;
     }
+    const id = ++requestId.current;
     setInputError(null);
     setAnalysis(null);
     setStrategy(null);
     setLlm(null);
     setAnalysisState("idle");
     setHighlight(null);
-    const ok = await fetchSerp(trimmed);
-    if (ok) await fetchAnalysis(trimmed);
+    window.scrollTo({ top: 0 });
+    const ok = await fetchSerp(trimmed, id);
+    if (ok && id === requestId.current) await fetchAnalysis(trimmed, id);
+  }
+
+  /** Retry only the LLM stage (SERP data already on screen). */
+  function retryAnalysis() {
+    const id = ++requestId.current;
+    fetchAnalysis(keyword, id);
   }
 
   const busy = serpState === "loading" || analysisState === "loading";
@@ -231,7 +247,7 @@ export default function Home() {
                   <div className="rounded-xl border border-red-200 bg-red-50 p-4 text-sm text-red-800">
                     <strong>Analysis failed.</strong> {error}
                     <button
-                      onClick={() => fetchAnalysis(keyword)}
+                      onClick={retryAnalysis}
                       className="ml-2 font-semibold underline underline-offset-2"
                     >
                       Retry analysis

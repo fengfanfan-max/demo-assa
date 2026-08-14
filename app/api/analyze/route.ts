@@ -33,6 +33,16 @@ export async function POST(req: NextRequest) {
     // LLM analysis + strategy (OpenAI-compatible provider or cached sample)
     const { output, usedSample, model } = await analyzeSerp(serp);
 
+    // Clamp evidence positions to the actual result count — the LLM can reference
+    // positions beyond the SERP we have (e.g. #12), which would break the evidence chain.
+    const maxPos = serp.results.length;
+    output.strategy.rationale = output.strategy.rationale
+      .map((r) => ({
+        ...r,
+        positions: r.positions.filter((p) => p >= 1 && p <= maxPos),
+      }))
+      .filter((r) => r.positions.length > 0);
+
     const response: AnalyzeResponse & { warnings?: string[] } = {
       keyword,
       serp,

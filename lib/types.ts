@@ -80,4 +80,6 @@ export interface AnalyzeResponse {
   analysis: SerpAnalysis;
   strategy: PageStrategy;
   llm: LlmSourceInfo;
+  /** Degradation notes (live→fixture fallback, LLM→cached sample, …). */
+  warnings?: string[];
 }
