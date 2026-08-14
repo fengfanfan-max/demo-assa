@@ -8,6 +8,29 @@ Built with **Next.js** (App Router, TypeScript, Tailwind). One process serves bo
 
 ---
 
+## Install & run
+
+Requirements: Node.js 20+.
+
+```bash
+npm install
+npm run dev          # auto: live SERP when SERPER_API_KEY is set, fixture otherwise
+```
+
+Open http://localhost:3000, enter a keyword, hit **Analyze SERP**.
+
+#
+### Data-source mode (startup command, not a UI toggle)
+
+| Command | SERP data source |
+|---|---|
+| `npm run dev` | **auto** — live (Serper.dev) when `SERPER_API_KEY` is set, bundled fixture otherwise |
+| `npm run dev:fixture` | **fixture** — always bundled snapshots (`SERP_MODE=fixture`), zero network, fully reproducible |
+| `npm run dev:live` | **live** — always real Google SERP (`SERP_MODE=live`); degrades to the fixture with a warning if the fetch fails |
+
+Production builds: `npm run build && npm start` (or `npm start:fixture`).
+The response always reports which source was actually used (`serp.source.type`), so there is no ambiguity at demo time.
+
 ## Design Decisions
 
 ### 1. How we understand the user and their problem
@@ -62,28 +85,6 @@ Per spec: login/permissions, database & analysis history, online deployment, bat
 - **Time-to-brief**: minutes from keyword to content brief vs. hours today; % of briefs adopted without rework by the content team.
 
 ---
-
-## Install & run
-
-Requirements: Node.js 20+.
-
-```bash
-npm install
-npm run dev          # auto: live SERP when SERPER_API_KEY is set, fixture otherwise
-```
-
-Open http://localhost:3000, enter a keyword, hit **Analyze SERP**.
-
-### Data-source mode (startup command, not a UI toggle)
-
-| Command | SERP data source |
-|---|---|
-| `npm run dev` | **auto** — live (Serper.dev) when `SERPER_API_KEY` is set, bundled fixture otherwise |
-| `npm run dev:fixture` | **fixture** — always bundled snapshots (`SERP_MODE=fixture`), zero network, fully reproducible |
-| `npm run dev:live` | **live** — always real Google SERP (`SERP_MODE=live`); degrades to the fixture with a warning if the fetch fails |
-
-Production builds: `npm run build && npm start` (or `npm start:fixture`).
-The response always reports which source was actually used (`serp.source.type`), so there is no ambiguity at demo time.
 
 ## Environment variables
 

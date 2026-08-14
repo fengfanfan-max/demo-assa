@@ -8,6 +8,30 @@
 
 ---
 
+## 安装与启动
+
+要求：Node.js 20+。
+
+```bash
+npm install
+npm run dev          # auto：配置了 SERPER_API_KEY 时走实时 SERP，否则走 fixture
+```
+
+打开 http://localhost:3000，输入关键词，点击 **Analyze SERP**。
+
+#
+### 数据源模式（启动命令决定，而非 UI 切换）
+
+| 命令 | SERP 数据源 |
+|---|---|
+| `npm run dev` | **auto** —— 配置了 `SERPER_API_KEY` 时走 live（Serper.dev），否则走捆绑 fixture |
+| `npm run dev:fixture` | **fixture** —— 始终使用捆绑快照（`SERP_MODE=fixture`），零网络、完全可复现 |
+| `npm run dev:live` | **live** —— 始终真实 Google SERP（`SERP_MODE=live`） |
+
+生产模式：`npm run build && npm start`（或 `npm run start:fixture`）。
+响应中始终报告实际使用的数据源（`serp.source.type`），演示时不存在歧义。
+
+
 ## 设计决策
 
 ### 1. 我们如何理解用户及其问题
@@ -62,28 +86,6 @@ LLM 是**读者和策略师，不是数据获取者**：
 - **简报产出耗时**：从关键词到内容简报的分钟数 vs 现在的小时数；内容团队无需返工直接采纳的简报占比。
 
 ---
-
-## 安装与启动
-
-要求：Node.js 20+。
-
-```bash
-npm install
-npm run dev          # auto：配置了 SERPER_API_KEY 时走实时 SERP，否则走 fixture
-```
-
-打开 http://localhost:3000，输入关键词，点击 **Analyze SERP**。
-
-### 数据源模式（启动命令决定，而非 UI 切换）
-
-| 命令 | SERP 数据源 |
-|---|---|
-| `npm run dev` | **auto** —— 配置了 `SERPER_API_KEY` 时走 live（Serper.dev），否则走捆绑 fixture |
-| `npm run dev:fixture` | **fixture** —— 始终使用捆绑快照（`SERP_MODE=fixture`），零网络、完全可复现 |
-| `npm run dev:live` | **live** —— 始终真实 Google SERP（`SERP_MODE=live`） |
-
-生产模式：`npm run build && npm start`（或 `npm run start:fixture`）。
-响应中始终报告实际使用的数据源（`serp.source.type`），演示时不存在歧义。
 
 ## 环境变量
 
