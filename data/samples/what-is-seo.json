@@ -1,0 +1,71 @@
+{
+  "analysis": {
+    "intent": "informational",
+    "intentConfidence": 0.95,
+    "intentReason": "All top results are definitions, guides, or explanations of SEO, targeting users seeking to understand what SEO is. No transactional or commercial intent is evident.",
+    "contentTypes": [
+      "Official guides",
+      "Educational articles",
+      "Community discussions",
+      "Encyclopedia entries",
+      "Video tutorials"
+    ],
+    "patterns": [
+      "Titles often start with 'What is SEO' or include 'Search Engine Optimization'",
+      "Content is authoritative and from recognized sources (Google, universities, industry experts)",
+      "Some results are from .edu and .gov domains, indicating trustworthiness",
+      "Mix of text and video content",
+      "Freshness varies; some are evergreen, some recent"
+    ],
+    "opportunities": [
+      "A comprehensive, beginner-friendly guide that covers both basics and advanced concepts in a structured way",
+      "Interactive elements like quizzes or checklists to engage users",
+      "Visual aids like infographics or diagrams to explain complex concepts",
+      "Real-world examples and case studies to illustrate SEO impact",
+      "A comparison of different SEO aspects (on-page, off-page, technical) in one place"
+    ]
+  },
+  "strategy": {
+    "pageType": "Comprehensive guide",
+    "targetUser": "Beginners and small business owners who want to understand SEO and how to apply it",
+    "coreNeed": "Clear, actionable explanation of SEO that demystifies the topic and provides a starting point",
+    "angle": "A practical, step-by-step guide that not only defines SEO but also shows how to implement it, with real-world examples and common pitfalls to avoid",
+    "valueProposition": "The only guide you need to understand SEO from scratch, with actionable steps and expert insights, without the jargon.",
+    "suggestedTitle": "What is SEO? A Beginner's Guide to Search Engine Optimization (2026)",
+    "pageStructure": [
+      "Introduction: What is SEO and why it matters",
+      "How search engines work: Crawling, indexing, ranking",
+      "Key components: On-page, off-page, technical SEO",
+      "SEO best practices: Content, keywords, backlinks, user experience",
+      "Common SEO myths and mistakes",
+      "How to measure SEO success: Tools and metrics",
+      "SEO trends and future outlook",
+      "Conclusion and next steps"
+    ],
+    "rationale": [
+      {
+        "positions": [
+          1,
+          2,
+          4,
+          5,
+          6,
+          7
+        ],
+        "note": "These results provide definitions and guides but often focus on one aspect or are too technical. A comprehensive guide that covers all aspects in a beginner-friendly way can capture users seeking a one-stop resource."
+      },
+      {
+        "positions": [
+          3
+        ],
+        "note": "The Reddit result shows users want simple explanations (ELI5). Our guide can fill this gap by offering a clear, jargon-free explanation."
+      },
+      {
+        "positions": [
+          8
+        ],
+        "note": "The video result indicates a demand for visual learning. Our guide can include embedded videos or visual elements to cater to this preference."
+      }
+    ]
+  }
+}

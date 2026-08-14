@@ -1,0 +1,68 @@
+{
+  "keyword": "what is seo",
+  "source": {
+    "type": "live",
+    "provider": "serper.dev",
+    "market": "United States",
+    "language": "English",
+    "capturedAt": "2026-08-14T03:08:05.096Z"
+  },
+  "results": [
+    {
+      "position": 1,
+      "title": "Search Engine Optimization (SEO) Starter Guide",
+      "url": "https://developers.google.com/search/docs/fundamentals/seo-starter-guide",
+      "domain": "developers.google.com",
+      "snippet": "A knowledge of basic SEO can have a noticeable impact. Explore the Google SEO starter guide for an overview of search engine optimization essentials."
+    },
+    {
+      "position": 2,
+      "title": "What is SEO? (Search Engine Optimization)",
+      "url": "https://www.mtu.edu/umc/services/websites/seo/what-is/",
+      "domain": "mtu.edu",
+      "snippet": "Search engine optimization (SEO) is the practice of creating and optimizing relevant, authoritative content in a way that helps visitors (and search engine ..."
+    },
+    {
+      "position": 3,
+      "title": "Can you eli5 what is seo is, what it does, and how its ...",
+      "url": "https://www.reddit.com/r/webdev/comments/1b3wowf/can_you_eli5_what_is_seo_is_what_it_does_and_how/",
+      "domain": "reddit.com",
+      "snippet": "Title."
+    },
+    {
+      "position": 4,
+      "title": "What Is SEO and How Does it Work?",
+      "url": "https://digitalmarketinginstitute.com/blog/what-is-seo",
+      "domain": "digitalmarketinginstitute.com",
+      "snippet": "SEO stands for 'Search Engine Optimization', which is the process of getting traffic from free, organic, editorial, or natural search results ..."
+    },
+    {
+      "position": 5,
+      "title": "What Is SEO? Search Engine Optimization Best Practices",
+      "url": "https://moz.com/learn/seo/what-is-seo",
+      "domain": "moz.com",
+      "snippet": "SEO stands for search engine optimization. It is the practice of improving your website's content, structure, and visibility to rank higher on ..."
+    },
+    {
+      "position": 6,
+      "title": "Search engine optimization",
+      "url": "https://en.wikipedia.org/wiki/Search_engine_optimization",
+      "domain": "en.wikipedia.org",
+      "snippet": "Search engine optimization (SEO) is the practice of improving the visibility and overall performance of websites and web pages in search engine results pages ( ..."
+    },
+    {
+      "position": 7,
+      "title": "What Is SEO - Search Engine Optimization?",
+      "url": "https://searchengineland.com/guide/what-is-seo",
+      "domain": "searchengineland.com",
+      "snippet": "SEO (Search Engine Optimization) is the practice of optimizing websites and digital content to increase visibility, traffic, and brand authority ..."
+    },
+    {
+      "position": 8,
+      "title": "What is SEO?",
+      "url": "https://www.youtube.com/watch?v=GSZIigUGViQ",
+      "domain": "youtube.com",
+      "snippet": "SEO, or Search Engine Optimization, is a crucial tool for ensuring any web page appears in search engine results. It's an essential practice ..."
+    }
+  ]
+}

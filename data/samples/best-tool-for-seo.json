@@ -1,0 +1,83 @@
+{
+  "analysis": {
+    "intent": "commercial",
+    "intentConfidence": 0.9,
+    "intentReason": "The query 'best tool for SEO' indicates users are researching and comparing tools before making a purchase decision. The SERP is dominated by listicles, reviews, and comparison content, with some vendor pages (Semrush) and review platforms (G2), which is typical of commercial investigation.",
+    "contentTypes": [
+      "Listicles of tools",
+      "User reviews and discussions",
+      "Vendor product pages",
+      "Review aggregation platforms"
+    ],
+    "patterns": [
+      "Titles often include the year (e.g., '2026') and a number of tools (e.g., '24 best', '20 best', '11 best').",
+      "Many pages claim personal testing or experience (e.g., 'I personally tested', 'I've personally tested').",
+      "Common tools mentioned across results: Ahrefs, Semrush, Google Search Console, Surfer, Moz.",
+      "Some results are from Reddit discussions, indicating community opinions are valued.",
+      "Vendor pages (Semrush) and review platforms (G2) appear, showing a mix of commercial and third-party perspectives.",
+      "Some pages focus on specific niches (e.g., content optimization tools for agencies)."
+    ],
+    "opportunities": [
+      "There is a lack of a comprehensive, unbiased comparison that includes pricing tiers, use cases, and pros/cons for different user types (e.g., beginners, agencies, enterprises).",
+      "Most listicles are generic; a tool that segments recommendations by user need (e.g., local SEO, e-commerce, content marketing) could stand out.",
+      "No result appears to offer an interactive comparison or a decision-making framework (e.g., quiz, flowchart).",
+      "The Reddit results show users seeking real-world opinions; a page that aggregates and synthesizes user reviews from multiple platforms could fill a gap.",
+      "Some results are from smaller blogs; a well-researched, authoritative guide with data-driven comparisons could outperform them."
+    ]
+  },
+  "strategy": {
+    "pageType": "Comprehensive comparison guide",
+    "targetUser": "Marketing professionals, SEO specialists, and business owners who are evaluating SEO tools for their specific needs and budget.",
+    "coreNeed": "To identify the best SEO tool(s) for their unique situation, with clear comparisons, pricing, and practical advice, without having to test dozens of tools themselves.",
+    "angle": "A decision-oriented guide that categorizes tools by use case and user type, with a transparent scoring system and real user feedback synthesis, rather than a simple listicle.",
+    "valueProposition": "The definitive, data-driven guide to choosing the right SEO tool for your specific needs, budget, and skill level, based on extensive testing and user reviews.",
+    "suggestedTitle": "The Best SEO Tools in 2026: A Data-Driven Comparison for Every Use Case",
+    "pageStructure": [
+      "Introduction: Why choosing the right SEO tool matters and how this guide is different.",
+      "How We Evaluated: Methodology, criteria (features, pricing, ease of use, support, user reviews), and scoring system.",
+      "Quick Comparison Table: Top tools at a glance with ratings, pricing, and best for.",
+      "Best SEO Tools by Category: e.g., All-in-One (Ahrefs, Semrush), Free (Google Search Console), Content Optimization (Surfer, Clearscope), Local SEO, Enterprise, etc.",
+      "In-Depth Reviews: For each top tool, provide pros, cons, pricing, ideal user, and user review summary.",
+      "User Reviews and Community Sentiment: Aggregate insights from Reddit, G2, and other platforms.",
+      "Decision Framework: Step-by-step guide to choosing based on your goals, budget, and technical skill.",
+      "Frequently Asked Questions: Common questions like 'Is Ahrefs better than Semrush?' or 'What is the best free SEO tool?'",
+      "Conclusion: Final recommendations and a call to action to try the top tools."
+    ],
+    "rationale": [
+      {
+        "positions": [
+          1,
+          3,
+          4,
+          8
+        ],
+        "note": "These listicles rank well but are often generic. A more structured, category-based guide with a clear methodology can stand out and provide better user experience, increasing engagement and dwell time."
+      },
+      {
+        "positions": [
+          2,
+          5
+        ],
+        "note": "Reddit threads show users want real opinions. By synthesizing user reviews and community sentiment, we can capture that trust factor and provide a more comprehensive answer than a single thread."
+      },
+      {
+        "positions": [
+          6
+        ],
+        "note": "Semrush's own page ranks, but it's biased. An unbiased comparison that includes Semrush but also alternatives can attract users who are still in the research phase and not ready to commit."
+      },
+      {
+        "positions": [
+          7
+        ],
+        "note": "G2 aggregates reviews but lacks in-depth analysis. Our guide can combine review data with expert testing, offering a one-stop resource that G2 doesn't provide."
+      },
+      {
+        "positions": [
+          9
+        ],
+        "note": "This result focuses on content optimization tools for agencies, showing a niche opportunity. By covering multiple niches, we can capture broader search demand while still addressing specific needs."
+      }
+    ]
+  }
+}

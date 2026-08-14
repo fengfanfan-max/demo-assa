@@ -1,0 +1,81 @@
+{
+  "analysis": {
+    "intent": "commercial",
+    "intentConfidence": 0.9,
+    "intentReason": "The SERP is dominated by comparison content (e.g., 'Ahrefs vs Semrush: The ultimate SEO tool comparison', 'Semrush vs Ahrefs: Which SEO Tool is Better?') and user discussions asking for recommendations (Reddit, Quora). This indicates users are evaluating tools before purchase, a classic commercial investigation intent.",
+    "contentTypes": [
+      "Comparison articles",
+      "User forum discussions",
+      "Expert opinions on Q&A platforms",
+      "Vendor comparison pages",
+      "Video reviews"
+    ],
+    "patterns": [
+      "Titles often include 'vs', 'which is better', 'compare', and year or '2025/2026' to signal freshness.",
+      "Many results are from third-party blogs or communities, not just official vendor pages.",
+      "Pricing and feature comparisons are prominent in snippets.",
+      "User-generated content (Reddit, Quora) ranks highly, indicating trust in peer opinions.",
+      "Vendor pages (Ahrefs) appear but are not top-ranked, suggesting users seek unbiased comparisons.",
+      "Some results are dated (e.g., 2025, 2026) to appear current."
+    ],
+    "opportunities": [
+      "A comprehensive, unbiased comparison that addresses specific use cases (e.g., SEO vs PPC, agency vs in-house) is missing.",
+      "No result provides a structured decision framework or scoring system across multiple criteria.",
+      "Lack of a side-by-side feature matrix with real data (e.g., database sizes, update frequency) beyond marketing claims.",
+      "No result focuses on cost-effectiveness for different budget tiers or team sizes.",
+      "Opportunity to include user testimonials or case studies with measurable outcomes.",
+      "A comparison that includes AEO (Answer Engine Optimization) as a new factor is emerging (Reddit post) but not fully covered."
+    ]
+  },
+  "strategy": {
+    "pageType": "Comprehensive comparison guide",
+    "targetUser": "SEO professionals, digital marketers, and business owners who are evaluating SEO tools for purchase and need an unbiased, data-driven comparison to make a decision.",
+    "coreNeed": "To understand the key differences between Ahrefs and Semrush in terms of features, pricing, usability, and performance, and to determine which tool best fits their specific needs and budget.",
+    "angle": "A data-driven, use-case-focused comparison that goes beyond feature lists to provide a scoring system, real-world performance benchmarks, and decision guidance based on different user profiles (e.g., agency, in-house, freelancer).",
+    "valueProposition": "Make an informed choice with our side-by-side analysis that scores both tools across critical criteria, includes real user feedback, and offers a personalized recommendation based on your specific SEO goals.",
+    "suggestedTitle": "Ahrefs vs Semrush 2026: The Ultimate Data-Driven Comparison (Features, Pricing, & Verdict)",
+    "pageStructure": [
+      "Introduction: Why Compare Ahrefs and Semrush?",
+      "Quick Verdict: Which Tool Wins for Different Use Cases?",
+      "Feature Comparison: Head-to-Head Breakdown (Keyword Research, Backlink Analysis, Site Audit, Rank Tracking, etc.)",
+      "Pricing and Value: Detailed Cost Analysis with Plans and What's Included",
+      "Performance and Accuracy: Data Freshness, Database Sizes, and Real-World Tests",
+      "User Experience: Interface, Learning Curve, and Customer Support",
+      "User Reviews and Community Sentiment: Aggregated Feedback from Reddit, Quora, and Trustpilot",
+      "Decision Framework: How to Choose Based on Your Needs (Agency, In-house, Freelancer, Budget)",
+      "Frequently Asked Questions",
+      "Conclusion and Final Recommendation"
+    ],
+    "rationale": [
+      {
+        "positions": [
+          1,
+          3,
+          4
+        ],
+        "note": "These user-generated discussions (Reddit, Quora) rank high, indicating users value peer opinions. Our page can aggregate and synthesize these insights, providing a more structured and comprehensive answer."
+      },
+      {
+        "positions": [
+          2,
+          8,
+          9
+        ],
+        "note": "These comparison articles from SE Ranking, OneLittleWeb, and Style Factory rank well but lack depth in decision-making frameworks. We can differentiate by offering a scoring system and personalized recommendations."
+      },
+      {
+        "positions": [
+          6
+        ],
+        "note": "Ahrefs' own comparison page is biased. Our independent analysis can be more trustworthy and attract users seeking unbiased information."
+      },
+      {
+        "positions": [
+          5,
+          10
+        ],
+        "note": "LinkedIn and YouTube results show interest in specific aspects like traffic accuracy and hands-on reviews. We can incorporate these angles, such as a section on data accuracy and a video summary."
+      }
+    ]
+  }
+}
