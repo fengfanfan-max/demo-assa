@@ -2,7 +2,7 @@
 
 A local, interactive web MVP that analyzes a keyword's SERP (US English) with an LLM and produces evidence-backed content strategy recommendations. Evaluation keyword: **`best tool for SEO`** (Market: United States, Language: English).
 
-> 🇨🇳 中文版：​[README.zh-CN.md](README.zh-CN.md)
+> 🇨🇳 中文版：​[README.zh-CN.md](README.zh-CN.md)  ·  🎬 Demo video: https://youtu.be/xmudau8xGAg
 
 Built with **Next.js** (App Router, TypeScript, Tailwind). One process serves both the UI and the server-side API routes — LLM calls never run in the browser.
 

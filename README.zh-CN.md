@@ -4,6 +4,8 @@
 
 技术栈：**Next.js**（App Router、TypeScript、Tailwind）。一个进程同时承载前端 UI 与服务端 API 路由——**LLM 调用只发生在服务端，绝不出现在浏览器里**。
 
+> 🎬 演示视频（英文版 README 含视频链接）：https://youtu.be/xmudau8xGAg
+
 ---
 
 ## 设计决策
